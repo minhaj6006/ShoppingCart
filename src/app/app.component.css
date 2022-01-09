@@ -1,0 +1,57 @@
+mat-toolbar{
+    background-color: cadetblue;
+    color: antiquewhite;
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 15px 30px;
+}
+
+.searchBox{
+    display: flex;
+    margin: auto 0;
+    height: 35px;
+    line-height: 35px;
+}
+
+.searchBox input{
+    border: none;
+    border-radius: 1.625rem;
+    outline: none;
+    background: #fff;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 350px;
+}
+
+.searchBox span{
+    color: rgb(85, 84, 84);
+    margin-top: 6px;
+    margin-left: -36px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+ol{
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+}
+
+ol li{
+    margin: 0 3px;
+}
+
+mat-icon{
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.mat-raised-button{
+    background-color: antiquewhite;
+    color: cadetblue;
+}

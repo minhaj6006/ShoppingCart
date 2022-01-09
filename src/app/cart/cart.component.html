@@ -1,0 +1,83 @@
+<ng-container *ngIf="products.length === 0">
+  <div class="container">
+    <div style="text-align: -webkit-center; margin-top: 80px">
+      <img src="assets/emptyCart.png" alt="" />
+      <br>
+      <button routerLink="" mat-button>Shop Now</button>
+    </div>
+  </div>
+</ng-container>
+
+<div *ngIf="products.length != 0" class="small-container cart">
+  <ng-container>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Remove Item</th>
+      </tr>
+      <tr *ngFor="let item of products; let i = index">
+        <td>{{i + 1}}</td>
+        <td>
+          <div class="cart-info">
+            <img src="{{item.pImg}}" />
+            <div>
+              <p>
+                <strong>{{item.pName}}</strong>
+              </p>
+              <small>{{item.pDesc}}</small>
+            </div>
+          </div>
+        </td>
+        <td>
+          {{ item.pPrice | currency: "PKR ":"symbol" }}
+        </td>
+        <td>
+          <a (click)="removeItem(item)" style="cursor: pointer">
+            <mat-icon>delete_forever</mat-icon>
+          </a>
+        </td>
+      </tr>
+    </table>
+    <div style="margin: 1%; border-left: 3px solid cadetblue;">
+    </div>
+
+    <div class="checkout">
+      <mat-card>
+        <mat-card-title>Checkout</mat-card-title>
+        <form [formGroup]="checkoutForm" (ngSubmit)="checkout()">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your full name</mat-label>
+            <input matInput type="email" placeholder="Ex. Adam Smith" formControlName="fullName">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your e-mail</mat-label>
+            <input matInput type="email" placeholder="name@example.com" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your address</mat-label>
+            <textarea matInput type="address" placeholder="Ex. 100 Main St" formControlName="address"></textarea>
+          </mat-form-field>
+
+          <div class="grandTotal">
+            <tr>
+              <td>
+                <strong> Total Price: </strong>
+                {{ grandTotal | currency: "PKR ":"symbol" }}
+              </td>
+            </tr>
+          </div>
+          <div class="checkout">
+            <button mat-button [disabled]="isLoading" type="submit">Checkout ➔ <img *ngIf="isLoading"
+                style="width: 24px;" src="assets/loadingSpinner.gif">
+            </button>
+
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,54 @@
+<!-- ------Product by Category------ -->
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="getProductByCategory('')">
+                <img style="width: 62px; height: 62px; margin-top: 5px;" src="assets/Category/allProduct.png" alt="">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="getProductByCategory('mobile')">
+                <img style="width: 62px; height: 62px; margin-top: 5px;" src="assets/Category/mobile.png" alt="">
+                <h6>Mobiles</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="getProductByCategory('laptop')">
+                <img style="width: 62px; height: 62px; margin-top: 5px;" src="assets/Category/laptop.png" alt="">
+                <h6>Laptops</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="getProductByCategory('camera')">
+                <img style="width: 62px; height: 62px; margin-top: 5px;" src="assets/Category/camera.png" alt="">
+                <h6>Cameras</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<!-- ------All Products------ -->
+<div class="container">
+    <div class="row">
+        <span>Products</span>
+        <ng-container *ngFor="let product of products">
+            <div class="card col-md-2">
+                <img src="{{product.pImg}}" alt="">
+                <p
+                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch; font-size: medium;">
+                    <strong>
+                        {{product.pName}}
+                    </strong>
+                </p>
+                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{product.pDesc}}
+                </p> -->
+                <p><strong>Price: </strong>{{product.pPrice | currency:"PKR ":"symbol"}}</p>
+                <button mat-raised-button class="mat-raised-button" (click)=addToCart(product)>Add to cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

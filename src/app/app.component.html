@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <div class="icon">
+    <button mat-button routerLink="">Shopping Cart</button>
+  </div>
+  <div class="searchBox">
+    <input type="text" placeholder="Search">
+    <span class="material-icons"> search </span>
+  </div>
+  <ol>
+    <li>
+      <button mat-raised-button class="mat-raised-button" routerLink="/login">Login</button>
+    </li>
+    <li>
+      <button mat-raised-button class="mat-raised-button" routerLink="/login">Logout</button>
+    </li>
+    <li>
+      <mat-icon *ngIf="totalItem != 0" routerLink="/cart" matBadgeOverlap="false" matBadgeColor="warn"
+        matBadge="{{totalItem}}">
+        shopping_cart
+      </mat-icon>
+    </li>
+  </ol>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,65 @@
+.example-card{
+    max-width: 400px;
+    
+}
+.center-content{
+    text-align: -webkit-center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.example-full-width{
+    margin-top: 10px;
+    width: 70%;
+}
+.mat-card-header{
+    background-color:cadetblue !important;
+    text-align: -webkit-center;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.mat-card-title{
+    color: antiquewhite;
+}
+.mat-card-subtitle{
+    color: antiquewhite;
+}
+
+.mat-raised-button{
+    background-color: cadetblue;
+    color: antiquewhite;
+}
+.hide-button{
+    color: cadetblue;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: cadetblue !important;
+    height: 3px;
+    
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: cadetblue !important;
+}
+  
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: cadetblue !important;
+} 
+  
+::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: cadetblue !important;;
+}
+
+::ng-deep.mat-snack-bar-container{
+    color: antiquewhite;
+    background-color: cadetblue;
+}
+
+ 
+  

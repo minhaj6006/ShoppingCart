@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { CartService } from './services/cart.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  title = 'ShoppingCart';
+  public totalItem!: number;
+
+  constructor(private cartService: CartService) { }
+
+  ngOnInit() {
+    this.cartService.getProducts()
+      .subscribe(data => {
+        this.totalItem = data.length;
+      });
+  }
+
+}
